@@ -1,0 +1,22 @@
+# Ollama Modelfile for Phi-4
+# 
+# 중요: 먼저 Ollama에서 phi4 모델을 다운로드해야 합니다:
+#   ollama pull phi4
+#
+# 그 다음 이 Modelfile을 사용하여 커스텀 설정으로 모델을 생성합니다:
+#   ollama create phi4-quantized -f Modelfile
+#   ollama run phi4-quantized
+
+# Ollama에서 다운로드한 phi4 모델을 기반으로 사용
+# Ollama가 지원하는 phi4 모델 이름을 사용하세요
+FROM phi4
+
+# Phi-4 모델 설정
+PARAMETER temperature 0.7
+PARAMETER top_p 0.9
+PARAMETER top_k 40
+PARAMETER num_ctx 16384
+
+# 시스템 프롬프트 (선택사항)
+# SYSTEM """You are a helpful AI assistant."""
+
